@@ -2,11 +2,11 @@ package com.blockvest.model;
 
 import jakarta.persistence.*;
 
-import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
-public class Wallet {
-
+public class Watchlist {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
@@ -14,7 +14,8 @@ public class Wallet {
     @OneToOne
     private User user;
 
-    private BigDecimal balance = BigDecimal.ZERO;
+    @ManyToMany
+    private List<Coin> coins =new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -32,11 +33,11 @@ public class Wallet {
         this.user = user;
     }
 
-    public BigDecimal getBalance() {
-        return balance;
+    public List<Coin> getCoins() {
+        return coins;
     }
 
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
+    public void setCoins(List<Coin> coins) {
+        this.coins = coins;
     }
 }

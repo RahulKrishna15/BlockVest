@@ -2,8 +2,10 @@ package com.blockvest.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
+@Entity
 public class Coin {
 
     @Id
@@ -206,7 +208,7 @@ public class Coin {
         return roi;
     }
 
-    public void setRoi(Object roi) {
+    public void setRoi(String roi) {
         this.roi = roi;
     }
 
@@ -289,7 +291,7 @@ public class Coin {
 
     @JsonProperty("roi")
     @JsonIgnore
-    private Object roi;
+    private String roi;
 
     @JsonProperty("last_updated")
     private String lastUpdated;

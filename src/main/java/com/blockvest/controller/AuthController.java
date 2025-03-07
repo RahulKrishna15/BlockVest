@@ -1,5 +1,7 @@
 package com.blockvest.controller;
 
+import com.blockvest.model.Watchlist;
+import com.blockvest.service.WatchlistService;
 import com.blockvest.utils.OtpUtils;
 import com.blockvest.config.JwtProvider;
 import com.blockvest.model.TwoFactorOTP;
@@ -27,6 +29,9 @@ public class AuthController {
     private EmailService emailService;
 
     @Autowired
+    private WatchlistService watchlistService;
+
+    @Autowired
     private UserRepository userRepository;
 
     @Autowired
@@ -50,6 +55,8 @@ public class AuthController {
         newUser.setPassword(user.getPassword());
 
         User savedUser = userRepository.save(newUser);
+
+        watchlistService.createWatchlist(savedUser);
 
         Authentication auth = new UsernamePasswordAuthenticationToken(user.getEmail(),user.getPassword());
 
