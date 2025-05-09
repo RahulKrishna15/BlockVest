@@ -97,10 +97,10 @@ BlockVest is a secure and scalable cryptocurrency trading platform built with mo
 Below is a sample configuration for your backend Spring Boot application. Update the fields marked with `your ...` accordingly.
 
 ```properties
-spring.application.name=treading-plateform
+spring.application.name=block_vest
 server.port=5454
 
-spring.datasource.url=jdbc:mysql://localhost:3306/treading
+spring.datasource.url=jdbc:mysql://localhost:3306/block_vest
 spring.datasource.username=root
 spring.datasource.password=your password
 spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
