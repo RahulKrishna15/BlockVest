@@ -31,12 +31,6 @@ BlockVest is a secure and scalable cryptocurrency trading platform built with mo
 
 ## 📦 Features
 
-### 🔐 Authentication & Security
-- User Registration & Login
-- Secure JWT-based Session Management
-- Two-Factor Authentication (2FA)
-- Forgot Password & Email-based Password Reset
-
 ### 💰 Crypto Trading
 - Buy & Sell a wide range of cryptocurrencies
 - Real-time price updates
